@@ -1,0 +1,80 @@
+/* Centraliza o conteúdo da página vertical e horizontalmente */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #435058;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+} 
+
+/* Estiliza o cartão de perfil */
+.profile-card {
+    background-color: #f2faff;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease;
+} 
+
+/* Estiliza a imagem do cartão de perfil */
+.profile-card img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+} 
+
+/* Remove os marcadores da lista */
+.profile-card ul {
+    list-style-type: none;
+    padding: 0;
+} 
+
+/* Estiliza os links do cartão de perfil */
+.profile-card a {
+    text-decoration: none;
+    color: #009dff;
+} 
+
+/* Adiciona um efeito de hover no cartão de perfil */
+.profile-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Estiliza o título do cartão de perfil */
+.profile-card h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+/* Estiliza o subtítulo do cartão de perfil */
+.profile-card h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+/* Em telas baixas (celular deitado), cartão em duas colunas */
+@media (max-height: 500px) {
+    .profile-card { 
+        width: 600px;
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Duas colunas de largura igual */
+        align-items: center; /* Alinha o conteúdo verticalmente */
+    }
+    
+    .profile-card header {
+        grid-row: 1 / 4; /* Faz o cabeçalho ocupar as três colunas */
+    }
+
+    /* Ajusta o tamanho da imagem do cartão de perfil */
+    .profile-card img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
